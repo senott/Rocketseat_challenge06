@@ -7,7 +7,10 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+
 import Category from './Category';
+
+export type TransactionType = 'income' | 'outcome';
 
 @Entity('transactions')
 class Transaction {
@@ -17,8 +20,11 @@ class Transaction {
   @Column()
   title: string;
 
-  @Column()
-  type: 'income' | 'outcome';
+  @Column({
+    type: 'enum',
+    enum: ['income', 'outcome'],
+  })
+  type: TransactionType; // TODO: resolver essa bronca!
 
   @Column()
   value: number;
