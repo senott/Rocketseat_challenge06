@@ -40,7 +40,7 @@ class CreateTransactionService {
     if (type === 'outcome' && balance.total - value < 0) {
       throw new AppError(
         'This transaction will turn your balance into negative.',
-        401,
+        400,
       );
     }
 

@@ -25,7 +25,7 @@ export default class CreateTransactionsTable1598534204960
           },
           {
             name: 'value',
-            type: 'money',
+            type: 'real',
           },
           {
             name: 'type',
