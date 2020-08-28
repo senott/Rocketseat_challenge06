@@ -44,7 +44,7 @@ class CreateTransactionService {
       );
     }
 
-    const transaction = transactionsRepository.create({
+    const transaction = await transactionsRepository.create({
       title,
       type,
       value,
